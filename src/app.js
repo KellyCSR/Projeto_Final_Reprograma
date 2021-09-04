@@ -14,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 
 
-app.use("/", clausulas)
-app.use("/clausulas", contratos)
+app.use("/clausulas", clausulas)
+app.use("/contravos", contratos)
 
 module.exports = app
