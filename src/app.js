@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const db = require("./data/database")
+const routes = require("./routes/clausulaRoutes")
 
 const clausulas = require("./routes/clausulaRoutes")
 const contratos = require("./routes/contratoRoutes")
