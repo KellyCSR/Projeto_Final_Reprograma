@@ -15,6 +15,6 @@ app.use(express.json())
 
 
 app.use("/clausulas", clausulas)
-app.use("/contravos", contratos)
+app.use("/contratos", contratos)
 
 module.exports = app
