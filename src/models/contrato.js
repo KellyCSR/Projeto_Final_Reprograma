@@ -6,7 +6,7 @@ const contratoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  genero: {
+  contrato: {
     type: String,
     required: true
   },
@@ -19,7 +19,7 @@ const contratoSchema = new mongoose.Schema({
     required: true,
     ref: 'clausula'
   },
-  criadoEm: {
+  criadaEm: {
     type: Date,
     required: true,
     default: new Date
