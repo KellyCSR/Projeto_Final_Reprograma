@@ -1,8 +1,6 @@
-const express = require("express")
 const app = require("./src/app");
-const PORT = process.env.PORT || 3000;
 
-const db = require("./src/data/database")
+const PORT = process.env.PORT || 3333;
 
 app.listen(PORT, () => {
     console.log(`Servidor Rodando na porta ${PORT}`);

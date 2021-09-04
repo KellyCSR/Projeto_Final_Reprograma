@@ -1,18 +1,18 @@
-const express = require('express')
+const express = require("express")
 const router = express.Router()
-const controller = require('../controllers/clausulaController')
+const controller = require("../controllers/clausulaController")
 
-//listar todos as clausulas/get/find
-router.get('/', controller.getAll)
 
-// //criar um novo clausula/post/save
-// router.post('/', controller.createClausula)
+router.get("/oi", (req, resp)=>{
+    resp.status(200).send({"mensagem":"funcionando no grau mami"})
+})
+router.get("/", controller.getAll )
+router.get("/:id", controller.getById )
 
-// //listar uma clausula/get/findById
+router.post("/cadastrar", controller.create)
 
-// //atualizar uma informacao especifica numa clausula/patch/findById/save
-// router.patch('/:id', controller.updateOne)
+router.patch("/atualizar/:id", controller.updateClausula)
 
-// //deletar uma clausula/delete/findById/remove
+router.delete("/deletar/:id", controller.deleteClausula)
 
 module.exports = router

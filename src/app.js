@@ -1,12 +1,19 @@
-const express = require("express");
-const app = express();
-const cors = require("cors");
+const express = require("express")
+const cors = require("cors")
+const db = require("./data/database")
 
-const routes = require("./routes/clausulaRoutes");
+const clausulas = require("./routes/clausulaRoutes")
+const contratos = require("./routes/contratoRoutes")
 
-app.use(cors());
-app.use(express.json());
+db.connect()
 
-app.use("/", routes);
+const app = express()
 
-module.exports = app;
+app.use(cors())
+app.use(express.json())
+
+
+app.use("/", clausulas)
+app.use("/clausulas", contratos)
+
+module.exports = app
