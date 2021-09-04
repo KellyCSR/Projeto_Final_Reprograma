@@ -12,7 +12,7 @@ router.patch("/atualizar/:id", controller.updateClausula)
 router.delete("/deletar/:id", controller.deleteClausula)
 
 router.get("/oi", (req, resp)=>{
-    resp.status(200).send({"mensagem":"funcionando no grau mami"})
+    resp.status(200).send({"mensagem":"oi to aqui ta funcionando"})
 })
 
 module.exports = router
