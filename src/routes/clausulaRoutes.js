@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
-const controller = require('../controllers/estudioController')
+const controller = require('../controllers/clacusulaController')
 
 //listar todos as clausulas/get/find
 router.get('/', controller.getAll)
 
 //criar um novo clausula/post/save
-router.post('/', controller.createStudio)
+router.post('/', controller.createClausula)
 
 //listar uma clausula/get/findById
 
