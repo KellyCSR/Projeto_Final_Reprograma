@@ -1,11 +1,20 @@
-const express = require("express")
+const express = require('express')
 const router = express.Router()
+const controller = require('../controllers/contratoController')
 
-router.get("/", (req, res)=>{
-    response.status(200).json({
-        "clausula": "API de clausulas",
-        "version": "1.0.0",
-        "mensagem": "Banco de clausulas"
-    })
-})
+//listar todos os conlausulas/get/find
+router.get('/', controller.getAll)
+
+//listar um contrato/get/findById
+router.get('/:id', controller.getById)
+
+//criar um novo contrato/post/save
+router.post('/', controller.create)
+
+//atualizar uma informacao especifica em um contrato/patch/findById/save
+router.patch('/:id', controller.updateContrato)
+
+//deletar uma clausula/delete/findById/remove
+router.delete('/:id', controller.deleteContrato)
+
 module.exports = router

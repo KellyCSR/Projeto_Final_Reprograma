@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
-const clausula = require('../models/clausula')
-const clausulas = require('../models/clausula')
-const clausulaSchema = require('../models/clausula')
-
+const Clausula = require('../models/clausula')
+const clausulaSchema = require('../models/clausula');
+const contrato = require('../models/contrato');
 
 const home = (request, response) => {
     response.status(200).send(
@@ -11,7 +10,6 @@ const home = (request, response) => {
         }
     )
 };
-
 
 const getAll = async (req, res) => {
     const clausula = await movieSchema.find().populate('clausula')
@@ -63,11 +61,11 @@ const updateClausula = async (req, res) => {
         if (req.body.descricao != null) {
             clausula.descricao = req.body.descricao
         }
-        if (req.body.criadoEm != null) {
+        if (req.body.criadaEm != null) {
             clausula.criadaEm = req.body.criadaEm
         }
         
-        const clausulaAtualizada = await filme.save()
+        const clausulaAtualizada = await clausula.save()
         res.json(clausulaAtualizada)
 
     } catch (error) {

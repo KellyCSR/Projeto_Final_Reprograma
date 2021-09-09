@@ -1,18 +1,44 @@
-const express = require("express")
+const express = require('express')
 const router = express.Router()
-const controller = require("../controllers/clausulaController")
+const controller = require('../controllers/clausulaController')
 
-router.get("/oi", (req, resp)=>{
-    resp.status(200).send({"mensagem":"oi to aqui ta funcionando"})
-})
+//listar todas as clausulas/get/find
+router.get('/', controller.getAll)
 
-router.get("/", controller.getAll )
-router.get("/:id", controller.getById )
+//listar uma clausula/get/findById
+router.get('/:id', controller.getById)
 
-router.post("/cadastrar", controller.create)
+//criar um nova clausula/post/save
+router.post('/', controller.create)
 
-router.patch("/atualizar/:id", controller.updateClausula)
+//atualizar uma informacao especifica numa clausula/patch/findById/save
+router.patch('/:id', controller.updateClausula)
 
-router.delete("/deletar/:id", controller.deleteClausula)
+//deletar uma clausula/delete/findById/remove
+router.delete('/')
 
 module.exports = router
+
+
+
+
+
+
+// const express = require("express")
+// const router = express.Router()
+// const controller = require("../controllers/clausulaController")
+
+// router.get("/oi", (req, resp)=>{
+//     resp.status(200).send({"mensagem":"oi to aqui ta funcionando"})
+// })
+
+// router.get("/", controller.getAll )
+// router.get("/:id", controller.getById )
+
+// router.post("/cadastrar", controller.create)
+
+// router.patch("/atualizar/:id", controller.updateClausula)
+
+// router.delete("/deletar/:id", controller.deleteClausula)
+
+// module.exports = router

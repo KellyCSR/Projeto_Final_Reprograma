@@ -6,10 +6,6 @@ const clausulaSchema = new mongoose.Schema({ // instanciar o schema dentro do mo
     type: String,
     required: true
   },
-  clausula: {
-    type: String,
-    required: true
-  },
   contrato: {
     type: Array,
     required: true

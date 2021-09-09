@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const contratoSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  contrato: {
+  nome: {
     type: String,
     required: true
   },
@@ -15,7 +15,7 @@ const contratoSchema = new mongoose.Schema({
     required: true,
     ref: 'clausula'
   },
-  criadaEm: {
+  criadoEm: {
     type: Date,
     required: true,
     default: new Date
