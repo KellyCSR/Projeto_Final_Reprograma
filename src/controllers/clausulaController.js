@@ -3,6 +3,16 @@ const clausula = require('../models/clausula')
 const clausulas = require('../models/clausula')
 const clausulaSchema = require('../models/clausula')
 
+
+const home = (request, response) => {
+    response.status(200).send(
+        {
+            "message": "Olá pessoa, seja bem vinde ao clausulado {reprograma}"
+        }
+    )
+};
+
+
 const getAll = async (req, res) => {
     const clausula = await movieSchema.find().populate('clausula')
     res.json(clausulas)

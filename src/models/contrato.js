@@ -2,10 +2,6 @@ const mongoose = require('mongoose')
 
 const contratoSchema = new mongoose.Schema({
   _id: mongoose.Schema.Types.ObjectId,
-  nome: {
-    type: String,
-    required: true
-  },
   contrato: {
     type: String,
     required: true
@@ -14,8 +10,8 @@ const contratoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  clausula: {
-    type: mongoose.Schema.Types.ObjectId,
+  clausulas: {
+    type: Array,
     required: true,
     ref: 'clausula'
   },
