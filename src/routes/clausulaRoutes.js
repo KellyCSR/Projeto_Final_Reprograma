@@ -19,7 +19,7 @@ router.post('/', controller.create)
 router.patch('/:id', controller.updateClausula)
 
 //deletar uma clausula/delete/findById/remove
-router.delete('/')
+router.delete("/deletar/:id", controller.deleteClausula)
 
 module.exports = router
 
