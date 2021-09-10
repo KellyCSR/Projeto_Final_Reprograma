@@ -1,18 +1,8 @@
-const mongoose = require('mongoose');
-const contrato = require('../models/contrato');
-const Contrato = require('../models/contrato')
+const mongoose = require('mongoose')
 const contratoSchema = require('../models/contrato')
 
-const home = (request, response) => {
-    response.status(200).send(
-        {
-            "message": "Olá pessoa, seja bem vinde ao minutário {reprograma}"
-        }
-    )
-};
-
 const getAll = async (req, res) => {
-    const contrato = await movieSchema.find().populate('contrato')
+    const contratos = await contratoSchema.find().populate('contract') //eager loading
     res.json(contratos)
 }
 
@@ -20,13 +10,12 @@ const create =  async (req,res) => {
     const contrato = new contratoSchema({
         _id: new mongoose.Types.ObjectId(),
         nome: req.body.nome,
-        contrato: req.body.contrato,
         descricao: req.body.descricao,
-        clausulas: req.body.clausulas,
+        clausula: req.body.clausula,
         criadoEm: req.body.criadoEm
     })
     try { 
-        const novoContrato = await contratos.save()
+        const novoContrato = await contrato.save()
         res.status(201).json(novoContrato)
     } catch (error) {
         res.status(400).json({ message: error.message })
@@ -35,7 +24,7 @@ const create =  async (req,res) => {
 
 const getById = async (req, res) => {
     try {
-        const contratos = await contratoSchema.findById(req.params.id)
+        const contrato = await contratoSchema.findById(req.params.id)
         if(contrato == null) {
             return res.status(404).json({message: 'contrato nao encontrado'})
         }
@@ -56,11 +45,11 @@ const updateContrato = async (req, res) => {
         if (req.body.nome != null) {
             contrato.nome = req.body.nome
         }
+        if (req.body.clausula != null) {
+            contrato.clausula = req.body.clausula
+        }
         if (req.body.descricao != null) {
             contrato.descricao = req.body.descricao
-        }
-        if (req.body.clausulas != null) {
-            contrato.clausulas = req.body.clausulas
         }
         if (req.body.criadoEm != null) {
             contrato.criadoEm = req.body.criadoEm

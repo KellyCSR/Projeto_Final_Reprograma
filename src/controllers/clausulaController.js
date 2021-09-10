@@ -1,15 +1,8 @@
+
 const mongoose = require('mongoose')
 const Clausula = require('../models/clausula')
 const clausulaSchema = require('../models/clausula');
 const contrato = require('../models/contrato');
-
-const home = (request, response) => {
-    response.status(200).send(
-        {
-            "message": "Olá pessoa, seja bem vinde ao clausulado {reprograma}"
-        }
-    )
-};
 
 const getAll = async (req, res) => {
     const clausula = await movieSchema.find().populate('clausula')
