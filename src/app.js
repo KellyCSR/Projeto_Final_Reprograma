@@ -8,9 +8,9 @@ const contratos = require("./routeS/contratoRoutes")
 
 db.connect()
 
-app.use(express.json())
-
 app.use("/clausulas", clausulas);
 app.use("/contratos", contratos);
+
+app.use(express.json())
 
 module.exports = app
