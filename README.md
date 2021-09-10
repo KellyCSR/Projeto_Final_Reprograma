@@ -80,12 +80,12 @@ Permitindo assim que os advogados foquem nas demandas que trazem impacto para os
 
 ## INFORMAÇÕES SOBRE AS ROTAS
 
-| OPERAÇÃO | VERBO | RECURSO | DESCRIÇÃO
-| --- | --- | --- | --- |
+| OPERAÇÃO | VERBO | RECURSO |
+| --- | --- | --- |
 | `C`REATE | POST | `/clausulas` ou `/contratos |
 | `R`EAD | GET | `/clausulas` ou `/contratos |
 | `U`PDATE | PATCH | clausulas` ou `/contratos |
-| `D`ELETE | DELETE | | clausulas` ou `/contratos |
+| `D`ELETE | DELETE | clausulas` ou `/contratos |
 
 <br>
 <br>
