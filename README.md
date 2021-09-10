@@ -21,6 +21,8 @@ Vantagens:
 
 Permitindo assim que os advogados foquem nas demandas que trazem impacto para os negócios.
 
+![Genious](https://github.com/KellyCSR/Projeto_Final_Reprograma/blob/main/genius-think.gif)
+
 <br>
 <br>
 
@@ -162,21 +164,17 @@ Permitindo assim que os advogados foquem nas demandas que trazem impacto para os
 
 
 ### Requisitos 
-- [ ]  **"/titulos/marvel"** Deverá retornar todos os títulos com o estudio Marvel
-- [ ]  **"/titulos/ghibli"** Deverá retornar todos os títulos com o estudio Ghibli
-- [x]  **"/titulos/pixar"** Deverá retornar todos os títulos com o estudio Pixar
+- []  **"/clausulas"** Deverá retornar todas as clausulas cadastradasDeverá retornar todos os contratos cadastrados
+- []  "**/contratos**" Deverá retornar todos os contratos cadastrados
 
-- [x]  **"/estudios"** Deverá retornar todos os estudios cadastrados
-- [x]  "**/titulos**" Deverá retornar todos os títulos cadastrados, cada um fazendo referencia ao seu respectivo estudio
+- []  "**/clausulas**" Deverá criar uma clausulas 
+- []  "**/contratos**"  Deverá criar um contrato 
 
-- [x]  "**/estudios**" Deverá criar um estudio 
-- [x]  "**/titulos**"  Deverá criar um título 
+- [ ]  "/clausulas/[ID]" Deverá deletar clausula por id
+- [ ]  "/contratos/[ID]" Deverá deletar contrato por id
 
-- [ ]  "/titulos/[ID]" Deverá deletar titulo por id específico e retorna mensagem amigável
-- [ ]  "/estudios/[ID]" Deverá deletar estudio por id específico e retorna mensagem amigável
-
-- [x]  "/titulos/[ID]" Deverá alterar informação específica dentro de um titulo por id específico e retorna o título alterado
-- [ ]  "/estudios/[ID]" Deverá alterar informação específica dentro de um estudio por id específico e retorna o título alterado
+- []  "/clausulas/[ID]" Deverá alterar informação específica dentro de uma clausulas por id específico e retorna o título alterado
+- [ ]  "/contratos/[ID]" Deverá alterar informação específica dentro de um contrato por id específico e retorna o título alterado
 
 
-## Kelly Cristina <3
+# Kelly Cristina <3
