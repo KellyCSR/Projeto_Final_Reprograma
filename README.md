@@ -2,12 +2,12 @@
 
 ## O Projeto <3
 
-A alta demanda de departamentos jurídicos e escritórios de advogacia que tem como principais atribuições a elaboração de contratos, faz com que os advogados fiquem sobrecarregados e tenham que dividir o tempo entre atender os clientes, estudar e entender a demanda, e fazer a gestão das cláusulas e minutas, que devem estar sempre atualizadas.
+A alta demanda de departamentos jurídicos e escritórios de advogacia, que tem como principais atribuições a elaboração de contratos, faz com que os advogados fiquem sobrecarregados e tenham que dividir o tempo entre atender os clientes, estudar, entender a demanda e fazer a gestão das cláusulas e minutas, que devem estar sempre atualizadas.
 
 ![Homer Simpson](https://github.com/KellyCSR/Projeto_Final_Reprograma/blob/main/tenor-13.gif)
 
-Diante desse cenário, a ideia deste projeto é oferecer um software de soluções e automação de rotinas jurídicas, sobretudo a gestão de cláculas, através de um clausulado e de contratos, através de um minutário.
-Com essa ferramenta é possível que departamentos jurídico e escritórios de advocacia possam organizar melhor seus documentos, garantindo economia de tempo, redução de riscos e atualização das minutas. 
+Diante desse cenário, a ideia deste projeto é oferecer um software de soluções e automação de rotinas jurídicas, sobretudo a gestão de cláusulas e minutas, através de um clausulado e de um minutário.
+Com essa ferramenta é possível que departamentos jurídicos e escritórios de advocacia possam organizar melhor seus documentos, garantindo economia de tempo, redução de riscos e atualização das minutas. 
 <br>
 <br>
 
