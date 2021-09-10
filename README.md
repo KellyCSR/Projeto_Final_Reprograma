@@ -164,16 +164,16 @@ Permitindo assim que os advogados foquem nas demandas que trazem impacto para os
 
 
 ### Requisitos 
-- []  **"/clausulas"** Deverá retornar todas as clausulas cadastradasDeverá retornar todos os contratos cadastrados
-- []  "**/contratos**" Deverá retornar todos os contratos cadastrados
+- [ ]   **"/clausulas"** Deverá retornar todas as clausulas cadastradasDeverá retornar todos os contratos cadastrados
+- [ ]   "**/contratos**" Deverá retornar todos os contratos cadastrados
 
-- []  "**/clausulas**" Deverá criar uma clausulas 
-- []  "**/contratos**"  Deverá criar um contrato 
+- [ ]   "**/clausulas**" Deverá criar uma clausulas 
+- [ ]   "**/contratos**"  Deverá criar um contrato 
 
 - [ ]  "/clausulas/[ID]" Deverá deletar clausula por id
 - [ ]  "/contratos/[ID]" Deverá deletar contrato por id
 
-- []  "/clausulas/[ID]" Deverá alterar informação específica dentro de uma clausulas por id específico e retorna o título alterado
+- [ ]   "/clausulas/[ID]" Deverá alterar informação específica dentro de uma clausulas por id específico e retorna o título alterado
 - [ ]  "/contratos/[ID]" Deverá alterar informação específica dentro de um contrato por id específico e retorna o título alterado
 
 
