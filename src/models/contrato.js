@@ -10,7 +10,7 @@ const contratoSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  clausulas: {
+  clausula: {
     type: Array,
     required: true,
     ref: 'clausula'
