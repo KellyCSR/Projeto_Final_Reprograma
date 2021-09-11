@@ -8,7 +8,7 @@ const getAll = async (req, res) => {
 
 const create =  async (req,res) => {
   const clausula = new clausulaSchema({
-     // _id: new mongoose.Types.ObjectId(),
+     _id: new mongoose.Types.ObjectId(),
       nome: req.body.alimento,
       contrato: req.body.contrato,
       descricao: req.body.descricao,
