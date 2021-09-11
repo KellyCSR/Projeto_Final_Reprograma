@@ -10,7 +10,7 @@ router.get("/oi", (req, resp)=>{
 router.get("/", controller.getAll )
 router.get("/:id", controller.getById )
 
-router.post("/cadastrar", controller.create)
+router.post("/cadastrar", controller.createClausula)
 
 router.patch("/atualizar", controller.updateClausula)
 
