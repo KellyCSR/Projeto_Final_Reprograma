@@ -1,0 +1,18 @@
+[
+    {
+        "nome":"LGPD",
+        "contrato":"Prestação de serviços",
+        "descricao":"Clausula de Lei Geral de Proteção de dados"
+    },
+    {
+        "nome":"Compliance",
+        "contrato":"Comodato",
+        "descricao":"Clausula de governança, em conformidade com o código de ética"
+    },
+    
+    {
+        "nome":"Assinatura eletronica",
+        "contrato":"Demolição",
+        "descricao":"clausula de acordo entre as partes para seguir com as assinaturas por meios eletronicos"
+    }
+]
