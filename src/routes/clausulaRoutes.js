@@ -14,7 +14,7 @@ router.post('/create', async (req, res) => {
         nome:req.body.nome,
         contrato:req.body.contrato,
         descricao:req.body.descricao,
-
+        criadaEm: req.body.criadoEm
     })
         
         try {

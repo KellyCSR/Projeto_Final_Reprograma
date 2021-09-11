@@ -43,7 +43,7 @@ const createClausula = async(req, res) =>{
         res.status(400).json({message: err.message})
     }
 }
-const getId = async (req,res)=>{
+const getById = async (req,res)=>{
     const clausulaId = req.params.id
     const clausulaById = await Clausula.findById(clausulaId)
     if(clausulaById == null){

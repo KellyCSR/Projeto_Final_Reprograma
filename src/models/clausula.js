@@ -1,13 +1,15 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-const clausulaSchema = new mongoose.Schema({
-
-    id: {type: Number,required: true,},
-    nome:{type: String, required: true,},
-    contrato:{type: Array,required: true,},
-    descricao:{type: String,required: true,},
-    criadaEm: {type: Date,required: true}
+const clausulasSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    nome: {type: String, require: true},
+    contrato: {type: String, require: true},
+    descricao: {type: String, require: true},
+    criadaEm: {type: String, require: true}
+}, {
+    versionKey: false
 });
 
+const clausulas = mongoose.model('materias', clausulasSchema);
 
-module.exports = mongoose.model('clausula', clausulaSchema);
+module.exports = clausulas;
