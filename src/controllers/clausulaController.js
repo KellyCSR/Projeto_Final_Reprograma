@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const clausulaSchema = require("../models/clausula")
+const clausulaSchema = require("../models/clausulas.json")
 
 const getAll = async (req, res) => {
   const clausulas = await clausulaSchema.find()
@@ -31,7 +31,7 @@ const create =  async (req,res) => {
 
 const getById = async (req, res) => {
   try {
-      const clausula = await clausulaSchema.findById(req.params._id)
+      const clausula = await clausulaSchema.findById(req.params.id)
       if(clausula == null) {
           return res.status(404).json({message: 'Clausula nao encontrada'})
       }
