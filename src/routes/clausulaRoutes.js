@@ -7,19 +7,13 @@ router.get("/oi", (req, resp)=>{
     resp.status(200).send({"mensagem":"oi to aqui ta funcionando "})
 })
 
-//READ & GET & FIND : listar todas as clausula
-router.get("/clausulas", controller.getAll);
+router.get("/", controller.getAll )
+router.get("/:id", controller.getById )
 
-//READ & GET & FIND : listar uma clausula/get/findById
-router.get("/filtrar/:id", controller.getById);
+router.post("/cadastrar", controller.create)
 
-//CREATE & POST & INSERT : criar uma nova clausula
-router.post("/cadastrar", controller.createClausula);
+router.patch("/atualizar/:id", controller.updateClausula)
 
-//UPDATE & PUT/patch & UPDATE (findById/save) : atualizar uma informacao especifica numa clausula
-router.patch("/atualizar/:id", controller.updateClausula);
+router.delete("/remover/:id", controller.deleteClausula)
 
-//DELETE & DELETE & REMOVE (findById): deletar uma clausula
-router.delete("/excluir/:id", controller.deleteClausula);
-
-module.exports = router;
+module.exports = router

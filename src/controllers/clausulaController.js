@@ -1,92 +1,91 @@
+const mongoose = require("mongoose");
+const clausulaSchema = require("../models/clausula")
 
-const mongoose = require('mongoose');
-const Clausula = require('../models/clausula');
-
-//READ & GET & FIND : listar todas as clausulas
 const getAll = async (req, res) => {
-    const clausula = await Clausula.find()
-    res.status(200).json(clausula)
-};
-
-//READ & GET & FIND : listar clauslas/get/findById
-const getById = async (req, res) => {
-    try {
-        const clausula = await Clausula.findById(req.params.id)
-        if(clausula == null) {
-            return res.status(404).json({message: "clausula não encontrada"})
-        }
-        res.json(clausula)
-    } catch (error) {
-        res.status(500).json({ message: error.message })
-
-    }
+  const clausulas = await clausulaSchema.find()
+  res.json(clausulas)
 }
 
-//CREATE & POST & INSERT : criar uma nova clausula
-const createClausula = async (req, res) => {
-    const clausula = new Clausula({
-        _id: new mongoose.Types.ObjectId(),
-        nome: req.body.nome,
-        contrato: req.body.contrato,
-        criadaEm: req.body.criadaEm
-    })
-    const ClausulaJaExiste = await Clausula.findOne({ nome: req.body.nome })
-    if (ClausulaJaExiste) {
-        return res.status(409).json({ error: "Clausula já cadastrada." })
-    }
+const create =  async (req,res) => {
+  const clausula = new clausulaSchema({
+      _id: new mongoose.Types.ObjectId(),
+      nome: req.body.alimento,
+      contrato: req.body.contrato,
+      descricao: req.body.descricao,
+      
+
+  })
+  const clausulaJaExiste = await clausulaSchema.findOne({nome: req.body.nome})
+    if (clausulaJaExiste) {
+      return res.status(409).json({error: 'Clausula ja cadastrada.'})
+    }else{
     try {
-        const novaClausula = await clausula.save()
-        res.status(201).json(novaClausula)
+      const newClausula = await clausula.save()
+      res.status(201).json(newClausula)
     } catch (err) {
-        res.status(400).json({ message: err.message })
+      res.status(400).json({ message: err.message})
     }
-};
+}
+}
 
-//UPDATE & PUT/patch & UPDATE (findById/save) : atualizar uma informacao especifica numa clausula
+const getById = async (req, res) => {
+  try {
+      const clausula = await clausulaSchema.findById(req.params.id)
+      if(clausula == null) {
+          return res.status(404).json({message: 'Clausula nao encontrada'})
+      }
+      res.json(clausula)
+  } catch (error) {
+      res.status(500).json({ message: error.message })
+
+  }
+}
+
 const updateClausula = async (req, res) => {
-    try {
-        const clausula = await Clausula.findById(req.params.id)
-        if(clausula == null) {
-            return res.status(404).json({message: "Clausula não encontrada"})
-        }
-        
-        if (req.body.nome != null) {
-            categoria.nome = req.body.nome
-        }   
+  try {
+      const clausula = await clausulaSchema.findById(req.params.id)
+      if(clausula == null) {
+          return res.status(404).json({message: 'Clausula nao encontrada'})
+      }
+      
+      if (req.body.nome != null) {
+          clausula.nome = req.body.nome
+      }
+      if (req.body.tipo != null) {
+          clausula.contrato = req.body.contrato
+      }
+      if (req.body.carboidrato != null) {
+          clausula.descricao = req.body.descricao
+      }
+      
+      
+      const ClausulaAtualizada = await clausula.save()
+      res.json(ClausulaAtualizada)
 
-        if (req.body.contrato != null) {
-            clausual.contrato = req.body.contrato
-        }  
-        if (req.body.criadaEm != null) {
-            clausual.criadaEm = req.body.criadaEm
-        }  
-        
-        const clausulaAtualizada = await clausula.save()
-        res.json(clausulaAtualizada)
-
-    } catch (error) {
-        res.status(500).json({ message: error.message })
-    }
+  } catch (error) {
+      res.status(500).json({ message: error.message })
+  }
 }
 
-//DELETE & DELETE & REMOVE (findById): deletar uma clausula
 const deleteClausula = async (req, res) => {
-    try {
-        const clausula = await Clausula.findById(req.params.id)
-        if (clausula == null) {
-            return res.status(404).json({ message: "Clausula não encontrada" })
-        }
-        await clausula.remove()
-        res.json({ message: "Clausula deletada com sucesso" })
-    } catch (error) {
-        res.status(500).json({ message: error.message })
+  try{
+    const clausula = await clausulaSchema.findById(req.params.id)
+    if(clausula == null){
+      return res.status(404).json({message: 'Clausula não encontrada'})
     }
+    await clausula.remove()
+    res.json({message: 'Clausula deletada com sucesso'})
+  } catch(error){
+    res.status(500).json({message: 'error.message'})
+  }
 }
+
+
 
 module.exports = {
-    getAll,
-    getById,
-    createClausula,
-    updateClausula,
-    deleteClausula
-};
+  getAll,
+  create,
+  getById,
+  updateClausula,
+  deleteClausula
+}
