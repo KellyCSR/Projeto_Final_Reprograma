@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
-const Clausula = require("../models/clausulas.json")
+const Clausula = require("../models/clausula")
 
 const getAll = async(req, res) =>{
     const clausulas = await Clausula.find()
     res.status(200).json(clausulas)
 }
 
-const getById = async (req,res)=>{
+const getById = async (req,res) => {
     const clausulaId = req.params.id
     const clausulaById = await Clausula.findById(clausulaId)
     if(clausulaById == null){
@@ -68,7 +68,7 @@ const updateClausula = async (req, res) => {
     if(clausulaById == null){
         return res.status(404).json({message: "Clausula não encontrada 🤷‍♀️"})
     }
-    Skill.findByIdAndUpdate(clausulaId, clausulaReq, { new: true }, (err, clausulaUpdate) => {
+    Clausula.findByIdAndUpdate(clausulaId, clausulaReq, { new: true }, (err, clausulaUpdate) => {
         if (err) {
             return res.status(424).json(
                 { message: err.message });

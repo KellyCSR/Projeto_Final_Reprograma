@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const clausulaSchema = new mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+
     id: {type: Number,required: true,},
     nome:{type: String, required: true,},
     contrato:{type: Array,required: true,},
