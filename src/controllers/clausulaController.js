@@ -12,6 +12,7 @@ const create =  async (req,res) => {
       nome: req.body.alimento,
       contrato: req.body.contrato,
       descricao: req.body.descricao,
+      criadaEm: req.body.criadaEm
       
 
   })
@@ -51,13 +52,15 @@ const updateClausula = async (req, res) => {
       if (req.body.nome != null) {
           clausula.nome = req.body.nome
       }
-      if (req.body.tipo != null) {
+      if (req.body.contrato != null) {
           clausula.contrato = req.body.contrato
       }
-      if (req.body.carboidrato != null) {
+      if (req.body.descricao != null) {
           clausula.descricao = req.body.descricao
       }
-      
+      if (req.body.criadaEm != null) {
+        clausula.criadaEm = req.body.criadaEm
+    }
       
       const ClausulaAtualizada = await clausula.save()
       res.json(ClausulaAtualizada)
