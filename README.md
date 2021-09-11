@@ -55,15 +55,14 @@ Permitindo assim que os advogados foquem nas demandas que trazem impacto para os
    |
    |    |- 📁 controllers
    |         |- 📄 clausulaController.js
-   |         |- 📄 contratoController.js
    |
    |    |- 📁 models
    |         |- 📄 clausula.js
-   |         |- 📄 contratp.js
+   |         |- 📄 clausulas.json
    |
    |    |- 📁 routes
    |         |- 📄 clausulaRoutes.js 
-   |         |- 📄 contratoRoutes.js 
+   |         |- 📄 index.js
    |
    |
    |- 📄 .env
