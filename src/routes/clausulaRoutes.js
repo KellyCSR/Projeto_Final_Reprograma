@@ -26,7 +26,7 @@ router.post('/create', async (req, res) => {
 
 const controller = require("../controllers/clausulaController");
 
-router.get("/", controller.getAll )
+router.get("/clausulas", controller.getAll )
 router.get("/:id", controller.getById )
 
 router.post("/cadastrar", controller.createClausula)
