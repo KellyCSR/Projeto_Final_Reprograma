@@ -1,9 +1,26 @@
 const mongoose = require("mongoose");
-const clausulaSchema = require("../models/clausulas.json")
+const Clausula = require("../models/clausulas.json")
 
-const getAll = async (req, res) => {
-  const clausulas = await clausulaSchema.find()
-  res.json(clausulas)
+const getAll = async(req, res) =>{
+    const clausulas = await Clausula.find()
+    res.status(200).json(clausulas)
+}
+
+const getById = async (req,res)=>{
+    const clausulaId = req.params.id
+    const clausulaById = await Clausula.findById(clausulaId)
+    if(clausulaById == null){
+        return res.status(404).json({message: "Clausula não encontrada 🤷‍♀️"})
+    }
+    Clausula.findOne({id:clausulaId},
+        function(err){
+            if(err){
+                res.status(500).send({message: err.message})
+            }else{
+                res.status(200).send(clausulaById)
+            }
+        })
+
 }
 
 const create =  async (req,res) => {
@@ -29,17 +46,21 @@ const create =  async (req,res) => {
 }
 }
 
-const getById = async (req, res) => {
-  try {
-      const clausula = await clausulaSchema.findById(req.params.id)
-      if(clausula == null) {
-          return res.status(404).json({message: 'Clausula nao encontrada'})
-      }
-      res.json(clausula)
-  } catch (error) {
-      res.status(500).json({ message: error.message })
+const getId = async (req,res)=>{
+    const clausulaId = req.params.id
+    const clausulaById = await Clausula.findById(clausulaId)
+    if(clausulaById == null){
+        return res.status(404).json({message: "Clausula não encontrada 🤷‍♀️"})
+    }
+    Clausula.findOne({id:clausulaId},
+        function(err){
+            if(err){
+                res.status(500).send({message: err.message})
+            }else{
+                res.status(200).send(clausulaById)
+            }
+        })
 
-  }
 }
 
 const updateClausula = async (req, res) => {
