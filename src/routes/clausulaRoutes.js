@@ -12,7 +12,7 @@ router.get("/:id", controller.getById )
 
 router.post("/cadastrar", controller.create)
 
-router.patch("/atualizar/:id", controller.updateClausula)
+router.patch("/atualizar", controller.updateClausula)
 
 router.delete("/remover/:id", controller.deleteClausula)
 

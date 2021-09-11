@@ -8,7 +8,7 @@ const getAll = async (req, res) => {
 
 const create =  async (req,res) => {
   const clausula = new clausulaSchema({
-      _id: new mongoose.Types.ObjectId(),
+     // _id: new mongoose.Types.ObjectId(),
       nome: req.body.alimento,
       contrato: req.body.contrato,
       descricao: req.body.descricao,
@@ -48,7 +48,9 @@ const updateClausula = async (req, res) => {
       if(clausula == null) {
           return res.status(404).json({message: 'Clausula nao encontrada'})
       }
-      
+      if (req.body.id != null) {
+        clausula.id = req.body.id
+    }
       if (req.body.nome != null) {
           clausula.nome = req.body.nome
       }
