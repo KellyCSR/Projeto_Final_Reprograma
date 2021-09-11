@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Contrato = require('../models/contrato');
 
 
-//READ & GET & FIND : listar todos os itens da dispensa
+//READ & GET & FIND : listar todos os itens contratos
 const getAll = async (req, res) => {
     const contrato = await Contrato.find().populate("descricao")
     res.status(200).json(contrato)
@@ -16,7 +16,7 @@ const getByID = async (req, res) => {
     res.json(ContratoFiltrado)
 }
 
-//CREATE & POST & INSERT : criar um novo item da dispensa
+//CREATE & POST & INSERT : criar um novo item
 const createContrato = async (req, res) => {
     const contrato = new Contrato({
         _id: new mongoose.Types.ObjectId(),
@@ -37,7 +37,7 @@ const createContrato = async (req, res) => {
     }
 };
 
-//UPDATE & PUT/patch & UPDATE (findById/save) : atualizar uma informacao especifica num item da dispensa
+//UPDATE & PUT/patch & UPDATE (findById/save) : atualizar uma informacao especifica
 const updateContrato = async (req, res) => {
     try {
         const contrato = await Contrato.findById(req.params.id)
@@ -65,7 +65,7 @@ const updateContrato = async (req, res) => {
     }
 }
 
-//DELETE & DELETE & REMOVE (findById): deletar um produto da dispensa
+//DELETE & DELETE & REMOVE (findById): deletar um contrato
 const deleteContrato = async (req, res) => {
     try {
         const contrato = await Contrato.findById(req.params.id)

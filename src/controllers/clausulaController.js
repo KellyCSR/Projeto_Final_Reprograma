@@ -2,13 +2,13 @@
 const mongoose = require('mongoose');
 const Clausula = require('../models/clausula');
 
-//READ & GET & FIND : listar todas as categorias
+//READ & GET & FIND : listar todas as clausulas
 const getAll = async (req, res) => {
     const clausula = await Clausula.find()
     res.status(200).json(clausula)
 };
 
-//READ & GET & FIND : listar um produto/get/findById
+//READ & GET & FIND : listar clauslas/get/findById
 const getById = async (req, res) => {
     try {
         const clausula = await Clausula.findById(req.params.id)
@@ -22,7 +22,7 @@ const getById = async (req, res) => {
     }
 }
 
-//CREATE & POST & INSERT : criar uma nova categoria para os items da dispensa
+//CREATE & POST & INSERT : criar uma nova clausula
 const createClausula = async (req, res) => {
     const clausula = new Clausula({
         _id: new mongoose.Types.ObjectId(),
@@ -42,7 +42,7 @@ const createClausula = async (req, res) => {
     }
 };
 
-//UPDATE & PUT/patch & UPDATE (findById/save) : atualizar uma informacao especifica numa categoria
+//UPDATE & PUT/patch & UPDATE (findById/save) : atualizar uma informacao especifica numa clausula
 const updateClausula = async (req, res) => {
     try {
         const clausula = await Clausula.findById(req.params.id)
@@ -69,7 +69,7 @@ const updateClausula = async (req, res) => {
     }
 }
 
-//DELETE & DELETE & REMOVE (findById): deletar um produto da dispensa
+//DELETE & DELETE & REMOVE (findById): deletar uma clausula
 const deleteClausula = async (req, res) => {
     try {
         const clausula = await Clausula.findById(req.params.id)
