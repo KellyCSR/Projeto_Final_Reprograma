@@ -17,4 +17,4 @@ const clausulaSchema = new mongoose.Schema({ // instanciar o schema dentro do mo
   }
 })
 
-module.exports = mongoose.model('clausula', clausulaSchema) // exportar
+module.exports = mongoose.model('clausula', clausulaSchema)

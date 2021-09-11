@@ -1,24 +1,24 @@
-const express = require('express')
-const router = express.Router()
-const controller = require('../controllers/contratoController')
+const express = require("express");
+const router = express.Router();
+const mongoose = require("mongoose");
+const controller = require("../controllers/contratoController");
 
-router.get("/oi", (req, resp)=>{
-    resp.status(200).send({"mensagem":"oi to aqui ta funcionando "})
-})
 
-//listar todos os conlausulas/get/find
-router.get('/', controller.getAll)
+//READ & GET & FIND : listar todos os itens da dispensa
+router.get("/", controller.getAll);
 
-//listar um contrato/get/findById
-router.get('/:id', controller.getById)
+//READ & GET & FIND : listar itens da dispensa por categoria
+router.get("/:id", controller.getByID);
 
-//criar um novo contrato/post/save
-router.post('/', controller.create)
+//CREATE & POST & INSERT : criar um novo item da dispensa
+router.post("/adicionar", controller.createContrato);
 
-//atualizar uma informacao especifica em um contrato/patch/findById/save
-router.patch('/:id', controller.updateContrato)
 
-//deletar uma clausula/delete/findById/remove
-router.delete('/:id', controller.deleteContrato)
+//UPDATE & PUT/patch & UPDATE (findById/save) : atualizar uma informacao especifica num item da dispensa
+router.patch("/atualizar/:id", controller.updateContrato);
 
-module.exports = router
+//DELETE & DELETE & REMOVE (findById): deletar um produto da dispensa
+router.delete("/excluir/:id", controller.deleteContrato);
+
+
+module.exports = router;
