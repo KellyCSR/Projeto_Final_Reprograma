@@ -14,9 +14,8 @@ router.post('/create', async (req, res) => {
         nome:req.body.nome,
         contrato:req.body.contrato,
         descricao:req.body.descricao,
-        criadaEm: req.body.criadoEm
+
     })
-    const modelExistente = await Models.findOne()
         
         try {
             const novoModels = await models.save()

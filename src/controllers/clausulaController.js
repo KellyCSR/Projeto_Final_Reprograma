@@ -28,8 +28,7 @@ const createClausula = async(req, res) =>{
         _id: mongoose.Types.ObjectId(),
         nome: req.body.nome,
         contrato: req.body.contrato,
-        descricao: req.body.descricao,
-        criadaEm: req.body.criadaEm
+        descricao: req.body.descricao
         
     })
     const clausulaExist = await Clausula.findOne({nome: req.body.nome})
